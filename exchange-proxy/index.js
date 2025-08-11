@@ -3,7 +3,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 const app = express();
 
 // Replace this with the target server URL
-const targetUrl = 'https://exchange-project.onrender.com';
+const targetUrl = 'https://api.backpack.exchange';
 
 // Handle CORS
 app.use((req, res, next) => {
