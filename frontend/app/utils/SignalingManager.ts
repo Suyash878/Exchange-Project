@@ -1,12 +1,21 @@
-import { Ticker } from "./types";
+import type { Ticker } from "./types";
 
 export const BASE_URL = "wss://ws.backpack.exchange/"
+
+interface CallbackEntry {
+    callback: (data: any) => void;
+    id: string;
+}
+
+interface CallbacksMap {
+    [key: string]: CallbackEntry[];
+}
 
 export class SignalingManager {
     private ws: WebSocket;
     private static instance: SignalingManager;
     private bufferedMessages: any[] = [];
-    private callbacks: any = {};
+    private callbacks: CallbacksMap = {};
     private id: number;
     private initialized: boolean = false;
 
@@ -81,7 +90,7 @@ export class SignalingManager {
         this.ws.send(JSON.stringify(messageToSend));
     }
 
-    async registerCallback(type: string, callback: any, id: string) {
+    async registerCallback(type: string, callback: (data: any) => void, id: string) {
         this.callbacks[type] = this.callbacks[type] || [];
         this.callbacks[type].push({ callback, id });
         // "ticker" => callback
@@ -89,7 +98,7 @@ export class SignalingManager {
 
     async deRegisterCallback(type: string, id: string) {
         if (this.callbacks[type]) {
-            const index = this.callbacks[type].findIndex(callback => callback.id === id);
+            const index = this.callbacks[type].findIndex(callbackEntry => callbackEntry.id === id);
             if (index !== -1) {
                 this.callbacks[type].splice(index, 1);
             }
