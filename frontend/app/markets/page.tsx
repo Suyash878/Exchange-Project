@@ -13,7 +13,6 @@ interface MarketData {
   quoteVolume: string
 }
 
-// Define supported base symbols
 const SUPPORTED_SYMBOLS = [
   "BTC",
   "ETH",
