@@ -5,11 +5,11 @@ A professional cryptocurrency exchange platform built with **Next.js** and **Nod
 ## Screenshots
 
 ### Markets Overview
-![Markets Overview](assets/Screenshot%20from%202025-08-12%2012-21-39.png)
+![Trading Interface](assets/Screenshot%20from%202025-08-12%2012-21-10.png)
 *View real-time market data with price changes and trading volumes*
 
 ### Trading Interface  
-![Trading Interface](assets/Screenshot%20from%202025-08-12%2012-21-10.png)
+![Markets Overview](assets/Screenshot%20from%202025-08-12%2012-21-39.png)
 *Advanced trading interface with candlestick charts and order book*
 
 ## Features
