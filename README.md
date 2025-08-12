@@ -1,4 +1,4 @@
-# Crypto Exchange App
+# Exchange App
 
 A professional cryptocurrency exchange platform built with **Next.js** and **Node.js**, featuring real-time market data, advanced trading charts, and seamless order management.
 
