@@ -8,7 +8,6 @@ const targetUrl = 'https://api.backpack.exchange';
 // Handle CORS
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Origin', 'https://exchange-project-yzi3.vercel.app');
     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
     res.header('Access-Control-Allow-Credentials', 'true');
@@ -21,10 +20,6 @@ app.use('/', createProxyMiddleware({
     changeOrigin: true,
     onProxyReq: (proxyReq, req, res) => {
         // Optionally, you can modify the request here
-        res.setHeader('Access-Control-Allow-Origin', '*');
-        res.setHeader('Access-Control-Allow-Origin', '*');
-        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-        res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
     },
     onProxyRes: (proxyRes, req, res) => {
         // Optionally, you can modify the response here
